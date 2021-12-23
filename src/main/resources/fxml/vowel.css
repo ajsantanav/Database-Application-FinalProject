@@ -1,0 +1,21 @@
+.isVowel {
+    -fx-font-size: 24px;
+    -fx-background-color: pink;
+    -fx-border-style: dashed;
+
+}
+
+.isConsonant {
+        -fx-font-size: 24px;
+        -fx-background-color: rgb(150,150,255);
+        -fx-border-style: dashed;
+}
+
+.isEven {
+        -fx-background-color: rgb(182,231,25);
+        -fx-border-style: dashed;
+}
+.isOdd {
+        -fx-background-color: rgb(255,204,0);
+        -fx-border-style: dashed;
+}

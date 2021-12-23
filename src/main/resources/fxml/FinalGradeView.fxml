@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="361.0" stylesheets="@format.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.citytech.cst.s23370098.finalgrade.FinalGradeController">
+  <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="title" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="213.0" stylesheets="@format.css" text="Grade Calculator" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <Label text="Score:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Label text="GPA:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Label fx:id="status" prefHeight="17.0" prefWidth="362.0" text="STATUS" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="7" />
+      <TextField fx:id="txtScore" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <TextField fx:id="txtGPA" disable="true" styleClass="gpa" text="0.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <children>
+            <Button fx:id="txtCalculate" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#calculateGrade" prefHeight="23.0" prefWidth="69.0" text="Calculate" />
+         </children>
+      </HBox>
+      <Label styleClass="gpa" text="Letter Grade:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="txtLetter" disable="true" styleClass="gpa" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+         <children>
+            <Button fx:id="txtClear" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#clearOutput" text="Clear" />
+         </children>
+      </HBox>
+       <MenuBar fx:id="menuBar" layoutX="-5.0" layoutY="2.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="Screens">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#item1" text="ABC" />
+                       <MenuItem mnemonicParsing="false" onAction="#item4" text="Final Grade" />
+                       <MenuItem mnemonicParsing="false" onAction="#item2" text="CustomerPurchases" />
+                       <MenuItem mnemonicParsing="false" onAction="#item3" text="SearchById" />
+                       <MenuItem mnemonicParsing="false" onAction="#item5" text="BarChart" />
+                       <MenuItem mnemonicParsing="false" text="Close" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Edit">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Delete" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="About" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+   </children>
+</GridPane>

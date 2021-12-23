@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="788.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.citytech.cst.s23370098.searchbyid.SearchByIdController">
+   <children>
+      <TextField fx:id="txtSearchById" layoutX="98.0" layoutY="53.0" />
+      <Button fx:id="btnSearch" layoutX="38.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnSearch" text="Search" />
+      <Label fx:id="dataLabel" layoutX="50.0" layoutY="86.0" text="Data for Customer ID" />
+      <Label fx:id="priceLabel" layoutX="50.0" layoutY="112.0" text="Total Price is" />
+       <Button fx:id="btnRewards" layoutX="38.0" layoutY="636.0" mnemonicParsing="false" onAction="#btnRewards" text="Button" />
+       <Label fx:id="rewardsLbl" layoutX="93.0" layoutY="640.0" text="Label" />
+      <ScrollPane layoutX="32.0" layoutY="151.0" prefHeight="465.0" prefWidth="500.0">
+         <content>
+            <TableView fx:id="tvCustomerInfo" prefHeight="451.0" prefWidth="500.0">
+              <columns>
+      
+                  <TableColumn prefWidth="125.0" text="Unit Price">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="unitPrice" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn prefWidth="125.0" text="Quantity">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="quantity" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn prefWidth="125.0" text="Name">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn prefWidth="125.0" text="Total Cost">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="totalCost" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+       <MenuBar fx:id="menuBar" layoutX="-5.0" layoutY="2.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="Screens">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#item1" text="ABC" />
+                       <MenuItem mnemonicParsing="false" onAction="#item4" text="Final Grade" />
+                       <MenuItem mnemonicParsing="false" onAction="#item2" text="CustomerPurchases" />
+                       <MenuItem mnemonicParsing="false" onAction="#item3" text="SearchById" />
+                       <MenuItem mnemonicParsing="false" onAction="#item5" text="BarChart" />
+                       <MenuItem mnemonicParsing="false" text="Close" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Edit">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Delete" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="About" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+<!--      <Button fx:id="btnTaxes" layoutX="38.0" layoutY="669.0" mnemonicParsing="false" onAction="#btnTaxes" text="Button" />-->
+<!--      <Label fx:id="taxesLbl" layoutX="93.0" layoutY="673.0" text="Label" />-->
+   </children>
+</AnchorPane>

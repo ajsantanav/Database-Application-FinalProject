@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.citytech.cst.s23370098.customer.CustomerPurchasesController">
+    <children>
+        <VBox layoutX="43.0" layoutY="62.0" prefHeight="600.0" prefWidth="291.0">
+            <children>
+                <AnchorPane fx:id="apYear" prefHeight="125.0" prefWidth="291.0">
+                    <children>
+                        <CheckBox layoutX="73.0" layoutY="21.0" mnemonicParsing="false" text="2012" />
+                        <CheckBox layoutX="73.0" layoutY="52.0" mnemonicParsing="false" text="2015" />
+                        <CheckBox layoutX="73.0" layoutY="77.0" mnemonicParsing="false" text="2018" />
+                        <CheckBox layoutX="130.0" layoutY="21.0" mnemonicParsing="false" text="2013" />
+                        <CheckBox layoutX="130.0" layoutY="52.0" mnemonicParsing="false" text="2016" />
+                        <CheckBox layoutX="193.0" layoutY="21.0" mnemonicParsing="false" text="2014" />
+                        <CheckBox layoutX="193.0" layoutY="52.0" mnemonicParsing="false" text="2017" />
+                        <CheckBox layoutX="130.0" layoutY="77.0" mnemonicParsing="false" text="2019" />
+                        <CheckBox layoutX="193.0" layoutY="77.0" mnemonicParsing="false" text="2020" />
+                        <Label layoutX="25.0" layoutY="52.0" prefHeight="17.0" prefWidth="39.0" text="Years" />
+                    </children></AnchorPane>
+                <AnchorPane fx:id="apMonths" prefHeight="139.0" prefWidth="291.0">
+                    <children>
+                        <CheckBox layoutX="79.0" layoutY="15.0" mnemonicParsing="false" text="Jan" />
+                        <CheckBox layoutX="126.0" layoutY="15.0" mnemonicParsing="false" text="Feb" />
+                        <CheckBox layoutX="176.0" layoutY="15.0" mnemonicParsing="false" text="Mar" />
+                        <CheckBox layoutX="79.0" layoutY="42.0" mnemonicParsing="false" text="Apr" />
+                        <CheckBox layoutX="126.0" layoutY="42.0" mnemonicParsing="false" text="May" />
+                        <CheckBox layoutX="176.0" layoutY="42.0" mnemonicParsing="false" text="Jun" />
+                        <CheckBox layoutX="79.0" layoutY="68.0" mnemonicParsing="false" text="Jul" />
+                        <CheckBox layoutX="126.0" layoutY="68.0" mnemonicParsing="false" text="Aug" />
+                        <CheckBox layoutX="176.0" layoutY="68.0" mnemonicParsing="false" text="Sep" />
+                        <CheckBox layoutX="79.0" layoutY="88.0" mnemonicParsing="false" text="Oct" />
+                        <CheckBox layoutX="126.0" layoutY="88.0" mnemonicParsing="false" text="Nov" />
+                        <CheckBox layoutX="176.0" layoutY="88.0" mnemonicParsing="false" text="Dec" />
+                        <Label layoutX="22.0" layoutY="52.0" text="Months" />
+                    </children></AnchorPane>
+                <AnchorPane fx:id="apDays" prefHeight="125.0" prefWidth="291.0">
+                    <children>
+                        <Label layoutX="23.0" layoutY="50.0" text="Days" />
+                        <CheckBox layoutX="81.0" layoutY="33.0" mnemonicParsing="false" text="Sun" userData="SUNDAY" />
+                        <CheckBox layoutX="129.0" layoutY="33.0" mnemonicParsing="false" text="Mon" userData="MONDAY" />
+                        <CheckBox layoutX="183.0" layoutY="33.0" mnemonicParsing="false" text="Tue" userData="TUESDAY" />
+                        <CheckBox layoutX="81.0" layoutY="59.0" mnemonicParsing="false" text="Wed" userData="WEDNESDAY" />
+                        <CheckBox layoutX="81.0" layoutY="86.0" mnemonicParsing="false" text="Sat" userData="SATURDAY" />
+                        <CheckBox layoutX="129.0" layoutY="59.0" mnemonicParsing="false" text="Thu" userData="THURSDAY" />
+                        <CheckBox layoutX="183.0" layoutY="59.0" mnemonicParsing="false" text="Fri" userData="FRIDAY" />
+                    </children></AnchorPane>
+                <AnchorPane fx:id="apLocation" prefHeight="125.0" prefWidth="291.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="50.0" text="Location" />
+                        <CheckBox layoutX="87.0" layoutY="27.0" mnemonicParsing="false" text="A" />
+                        <CheckBox layoutX="87.0" layoutY="59.0" mnemonicParsing="false" text="C" />
+                        <CheckBox layoutX="132.0" layoutY="27.0" mnemonicParsing="false" text="B" />
+                        <CheckBox layoutX="131.0" layoutY="59.0" mnemonicParsing="false" text="D" />
+                    </children></AnchorPane>
+                <AnchorPane prefHeight="125.0" prefWidth="291.0" />
+            </children>
+        </VBox>
+        <Button fx:id="btSearch" layoutX="57.0" layoutY="673.0" mnemonicParsing="false" onAction="#search" text="Search" />
+        <TableView fx:id="tvCustomerPurchases" layoutX="336.0" layoutY="31.0" prefHeight="663.0" prefWidth="697.0">
+            <columns>
+                <TableColumn prefWidth="90.0" text="Customer Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="customerId" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Location Code">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="locationCode" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Total Items">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="totalItems" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Total Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="totalPrice" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Purchase Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Month">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="month" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="90.0" text="Day">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dayName" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Label fx:id="lbMessage" layoutX="336.0" layoutY="716.0" prefHeight="17.0" prefWidth="697.0" text="Label" />
+        <MenuBar fx:id="menuBar" layoutX="-5.0" layoutY="2.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Screens">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#item1" text="ABC" />
+                        <MenuItem mnemonicParsing="false" onAction="#item4" text="Final Grade" />
+                        <MenuItem mnemonicParsing="false" onAction="#item2" text="CustomerPurchases" />
+                        <MenuItem mnemonicParsing="false" onAction="#item3" text="SearchById" />
+                        <MenuItem mnemonicParsing="false" onAction="#item5" text="BarChart" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>
